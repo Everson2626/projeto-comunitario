@@ -1,16 +1,37 @@
-<div class="card text-center">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Lorem ipsum</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ligula aliquam, tempor tortor vel, pellentesque metus. Nulla egestas convallis nisl, eget tempus urna malesuada ut. Curabitur purus augue, auctor id finibus at, venenatis ut mi. Aliquam facilisis lacus nec elit lacinia hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In at purus nec tellus pulvinar scelerisque id ac justo. Etiam ligula nulla, rhoncus non urna in, aliquet egestas ipsum. Sed id aliquam odio.
+<div *ngIf="exibirJogo">
 
-      Nullam vitae magna ex. Phasellus imperdiet arcu vel commodo eleifend. Nullam congue tellus et molestie porta. Suspendisse et lorem at sem efficitur elementum id in nunc. Morbi scelerisque mattis eros. Suspendisse sit amet nisl congue, lobortis ipsum suscipit, efficitur nunc. Ut ut mauris ut ligula interdum dapibus faucibus sit amet lorem.</p>
-    <button class="btn btn-primary" (click)="resposta(true)">Verdadeiro</button>
-    <button class="btn btn-primary" (click)="resposta(false)">Falso</button>
+  <div *ngIf="!exibirDescricao">
+    <div class="card text-center">
+      <div class="card-header">
+        Herois microscopicos
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Questão: {{ perguntas[perguntaAtual].questao }}</h5>
+        <p class="card-text">{{ perguntas[perguntaAtual].titulo }}</p>
+        <button class="btn btn-primary" (click)="resposta(true)">Verdadeiro</button>
+        <button class="btn btn-primary" (click)="resposta(false)">Falso</button>
+      </div>
+      <div class="card-footer text-muted">
+        3 testes realizados
+      </div>
+    </div>
   </div>
-  <div class="card-footer text-muted">
-    3 testes realizados
+
+  <div *ngIf="exibirDescricao">
+    <div class="card text-center">
+      <div class="card-header">
+        Herois microscopicos
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Questão: {{ perguntas[perguntaAtual].questao }}</h5>
+        <p class="card-text">{{ perguntas[perguntaAtual].descricao }}</p>
+        <button class="btn btn-primary" (click)="proximaPergunta()">Proxima pergunta</button>
+      </div>
+      <div class="card-footer text-muted">
+        3 testes realizados
+      </div>
+    </div>
   </div>
+  
 </div>
+

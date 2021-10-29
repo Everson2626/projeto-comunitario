@@ -12,7 +12,7 @@ import { JogoComponent } from './components/jogo/jogo.component';
     JogoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
